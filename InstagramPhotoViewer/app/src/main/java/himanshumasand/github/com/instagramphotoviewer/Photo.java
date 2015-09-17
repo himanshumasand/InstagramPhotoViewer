@@ -18,4 +18,24 @@ public class Photo {
         this.imageHeight = imageHeight;
         this.likesCount = likesCount;
     }
+
+    public String getUsername() {
+        return username;
+    }
+
+    public String getCaption() {
+        return caption;
+    }
+
+    public String getImageUrl() {
+        return imageUrl;
+    }
+
+    public int getImageHeight() {
+        return imageHeight;
+    }
+
+    public int getLikesCount() {
+        return likesCount;
+    }
 }
