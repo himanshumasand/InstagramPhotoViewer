@@ -20,6 +20,9 @@ public class PhotosAdapter extends ArrayAdapter<Photo> {
     private static class ViewHolder {
         ImageView image;
         TextView caption;
+        ImageView profilePic;
+        TextView userName;
+        TextView time;
     }
 
     public PhotosAdapter(Context context, List<Photo> objects) {
@@ -37,6 +40,9 @@ public class PhotosAdapter extends ArrayAdapter<Photo> {
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_photo, parent, false);
             viewHolder.image = (ImageView) convertView.findViewById(R.id.ivPhoto);
             viewHolder.caption = (TextView) convertView.findViewById(R.id.tvCaption);
+            viewHolder.profilePic = (ImageView) convertView.findViewById(R.id.ivProfilePic);
+            viewHolder.userName = (TextView) convertView.findViewById(R.id.tvUserName);
+            viewHolder.time = (TextView) convertView.findViewById(R.id.tvTime);
             convertView.setTag(viewHolder);
         }
         else {
@@ -45,8 +51,37 @@ public class PhotosAdapter extends ArrayAdapter<Photo> {
 
         viewHolder.image.setImageResource(0);
         Picasso.with(getContext()).load(photo.getImageUrl()).into(viewHolder.image);
+
+        viewHolder.profilePic.setImageResource(0);
+        Picasso.with(getContext()).load(photo.getUserProfilePicUrl()).into(viewHolder.profilePic);
+
         viewHolder.caption.setText(photo.getCaption());
+        viewHolder.userName.setText(photo.getUsername());
+        viewHolder.time.setText(getTimerValue(photo.getCreatedTime()));
+
 
         return convertView;
+    }
+
+    private String getTimerValue(long createdTime) {
+        String time;
+
+        long currentUnixTime = System.currentTimeMillis() / 1000L;
+        long timeDifference = (currentUnixTime - createdTime);
+
+        int days = (int) timeDifference/(60*60*24);
+        int hours = (int)timeDifference/(60*60);
+        int mins = (int) timeDifference/(60);
+
+        if(days > 0) {
+            time = String.valueOf(days) + "d";
+        }
+        else if(hours > 0) {
+            time = String.valueOf(hours) + "h";
+        }
+        else {
+            time = String.valueOf(mins) + "m";
+        }
+        return time;
     }
 }

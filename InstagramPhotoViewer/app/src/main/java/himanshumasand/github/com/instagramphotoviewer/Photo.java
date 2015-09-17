@@ -6,16 +6,20 @@ package himanshumasand.github.com.instagramphotoviewer;
 public class Photo {
 
     private String username;
+    private String userProfilePicUrl;
     private String caption;
     private String imageUrl;
     private int imageHeight;
+    private long createdTime;
     private int likesCount;
 
-    public Photo(String username, String caption, String imageUrl, int imageHeight, int likesCount) {
+    public Photo(String username, String userProfilePic, String caption, String imageUrl, int imageHeight, long createdTime, int likesCount) {
         this.username = username;
+        this.userProfilePicUrl = userProfilePic;
         this.caption = caption;
         this.imageUrl = imageUrl;
         this.imageHeight = imageHeight;
+        this.createdTime = createdTime;
         this.likesCount = likesCount;
     }
 
@@ -37,5 +41,13 @@ public class Photo {
 
     public int getLikesCount() {
         return likesCount;
+    }
+
+    public String getUserProfilePicUrl() {
+        return userProfilePicUrl;
+    }
+
+    public long getCreatedTime() {
+        return createdTime;
     }
 }
