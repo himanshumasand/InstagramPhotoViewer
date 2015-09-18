@@ -22,11 +22,12 @@
         android:layout_below="@+id/ivPhoto"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
-        android:textSize="20sp"
+        android:textSize="15sp"
         android:maxLines="3"
         android:ellipsize="end" />
 
-    <ImageView
+    <com.makeramen.roundedimageview.RoundedImageView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/ivProfilePic"
@@ -34,7 +35,11 @@
         android:minWidth="40dp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+        android:layout_alignParentStart="true"
+        app:riv_corner_radius="30dip"
+        app:riv_border_width="2dp"
+        app:riv_border_color="#ffffff"
+        app:riv_mutate_background="true" />
 
     <TextView
         android:layout_width="wrap_content"
@@ -55,16 +60,16 @@
         android:layout_alignParentEnd="true" />
 
     <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="24dp"
+        android:layout_height="24dp"
         android:id="@+id/ivTime"
         android:layout_alignParentTop="false"
         android:layout_toLeftOf="@+id/tvTime"
         android:layout_toStartOf="@+id/tvTime"
-        android:minWidth="10dp"
-        android:minHeight="10dp"
+        android:scaleType="fitCenter"
         android:src="@drawable/clock"
         android:layout_alignBottom="@+id/tvTime"
-        android:layout_alignTop="@+id/tvTime" />
+        android:layout_alignTop="@+id/tvTime"
+        android:alpha="0.5" />
 
 </RelativeLayout>
