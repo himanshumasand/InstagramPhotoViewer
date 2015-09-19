@@ -10,6 +10,7 @@ import android.widget.TextView;
 
 import com.squareup.picasso.Picasso;
 
+import java.text.DecimalFormat;
 import java.util.List;
 
 /**
@@ -18,11 +19,14 @@ import java.util.List;
 public class PhotosAdapter extends ArrayAdapter<Photo> {
 
     private static class ViewHolder {
-        ImageView image;
-        TextView caption;
         ImageView profilePic;
         TextView userName;
         TextView time;
+        ImageView image;
+        TextView likes;
+        TextView usernameBottom;
+        TextView caption;
+
     }
 
     public PhotosAdapter(Context context, List<Photo> objects) {
@@ -38,11 +42,14 @@ public class PhotosAdapter extends ArrayAdapter<Photo> {
         if(convertView == null) {
             viewHolder = new ViewHolder();
             convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_photo, parent, false);
-            viewHolder.image = (ImageView) convertView.findViewById(R.id.ivPhoto);
-            viewHolder.caption = (TextView) convertView.findViewById(R.id.tvCaption);
             viewHolder.profilePic = (ImageView) convertView.findViewById(R.id.ivProfilePic);
             viewHolder.userName = (TextView) convertView.findViewById(R.id.tvUserName);
             viewHolder.time = (TextView) convertView.findViewById(R.id.tvTime);
+            viewHolder.image = (ImageView) convertView.findViewById(R.id.ivPhoto);
+            viewHolder.likes = (TextView) convertView.findViewById(R.id.tvLikesCount);
+            viewHolder.usernameBottom = (TextView) convertView.findViewById(R.id.tvUserNameCaption);
+            viewHolder.caption = (TextView) convertView.findViewById(R.id.tvCaption);
+
             convertView.setTag(viewHolder);
         }
         else {
@@ -57,6 +64,11 @@ public class PhotosAdapter extends ArrayAdapter<Photo> {
 
         viewHolder.caption.setText(photo.getCaption());
         viewHolder.userName.setText(photo.getUsername());
+        viewHolder.usernameBottom.setText(photo.getUsername());
+
+        DecimalFormat formatter = new DecimalFormat("#,###,###");
+        viewHolder.likes.setText(formatter.format(photo.getLikesCount()) + " likes");
+
         viewHolder.time.setText(getTimerValue(photo.getCreatedTime()));
 
 

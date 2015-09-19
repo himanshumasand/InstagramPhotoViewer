@@ -9,15 +9,17 @@ public class Photo {
     private String userProfilePicUrl;
     private String caption;
     private String imageUrl;
+    private int imageWidth;
     private int imageHeight;
     private long createdTime;
     private int likesCount;
 
-    public Photo(String username, String userProfilePic, String caption, String imageUrl, int imageHeight, long createdTime, int likesCount) {
+    public Photo(String username, String userProfilePic, String caption, String imageUrl, int imageWidth, int imageHeight, long createdTime, int likesCount) {
         this.username = username;
         this.userProfilePicUrl = userProfilePic;
         this.caption = caption;
         this.imageUrl = imageUrl;
+        this.imageWidth = imageWidth;
         this.imageHeight = imageHeight;
         this.createdTime = createdTime;
         this.likesCount = likesCount;
@@ -33,6 +35,10 @@ public class Photo {
 
     public String getImageUrl() {
         return imageUrl;
+    }
+
+    public int getImageWidth() {
+        return imageWidth;
     }
 
     public int getImageHeight() {
