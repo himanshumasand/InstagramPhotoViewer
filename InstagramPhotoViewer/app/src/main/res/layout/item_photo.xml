@@ -76,7 +76,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Caption"
-            android:textColor="#ff959595"
+            android:textColor="#ff616161"
             android:id="@+id/tvCaption"
             android:textSize="12sp"
             android:maxLines="3"

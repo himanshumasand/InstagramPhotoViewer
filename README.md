@@ -2,7 +2,7 @@
 
 **InstagramPhotoViewer** is an android app that allows a user to check out popular photos from Instagram. The app utilizes Instagram API to display images and basic image information to the user.
 
-Time spent: **2** hours spent in total
+Time spent: **20** hours spent in total
 
 ## User Stories
 
@@ -11,16 +11,16 @@ The following **required** functionality is completed:
 * [x] User can **scroll through current popular photos** from Instagram
 * [x] For each photo displayed, user can see the following details:
   * [x] Graphic, Caption, Username
-  * [ ] Relative timestamp, like count, user profile image
+  * [x] Relative timestamp, like count, user profile image
 
 The following **optional** features are implemented:
 
-* [ ] User can **pull-to-refresh** popular stream to get the latest popular photos
+* [x] User can **pull-to-refresh** popular stream to get the latest popular photos
 * [ ] Show latest comments for each photo
 * [ ] Display each photo with the same style and proportions as the real Instagram
-* [ ] Display each user profile image using a RoundedImageViewDisplay each user profile image using a [RoundedImageView](https://github.com/vinc3m1/RoundedImageView)
+* [x] Display each user profile image using a RoundedImageViewDisplay each user profile image using a [RoundedImageView](https://github.com/vinc3m1/RoundedImageView)
 * [ ] Display a nice default placeholder graphic for each image during loading
-* [ ] Improved the user interface through styling and coloring
+* [x] Improved the user interface through styling and coloring
 
 The following **bonus** features are implemented:
 
@@ -30,13 +30,13 @@ The following **bonus** features are implemented:
 
 The following **additional** features are implemented:
 
-* [ ] List anything else that you can get done to improve the app functionality!
+* [x] Changed font colors for words starting with a '#' or '@'
 
 ## Video Walkthrough 
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/nTrMxc0.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/G6X5Wg3.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
 

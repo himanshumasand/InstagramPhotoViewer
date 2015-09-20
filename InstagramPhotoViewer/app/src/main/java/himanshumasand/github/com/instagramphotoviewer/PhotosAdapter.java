@@ -1,6 +1,9 @@
 package himanshumasand.github.com.instagramphotoviewer;
 
 import android.content.Context;
+import android.text.Spannable;
+import android.text.SpannableString;
+import android.text.style.ForegroundColorSpan;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -57,12 +60,13 @@ public class PhotosAdapter extends ArrayAdapter<Photo> {
         }
 
         viewHolder.image.setImageResource(0);
-        Picasso.with(getContext()).load(photo.getImageUrl()).into(viewHolder.image);
+        Picasso.with(getContext()).load(photo.getImageUrl()).resize(getContext().getResources().getDisplayMetrics().widthPixels, 0).into(viewHolder.image);
 
         viewHolder.profilePic.setImageResource(0);
         Picasso.with(getContext()).load(photo.getUserProfilePicUrl()).into(viewHolder.profilePic);
 
-        viewHolder.caption.setText(photo.getCaption());
+        getCaptionTextWithColors(viewHolder.caption, photo.getCaption());
+
         viewHolder.userName.setText(photo.getUsername());
         viewHolder.usernameBottom.setText(photo.getUsername());
 
@@ -73,6 +77,23 @@ public class PhotosAdapter extends ArrayAdapter<Photo> {
 
 
         return convertView;
+    }
+
+    private TextView getCaptionTextWithColors(TextView coloredCaption, String caption) {
+        coloredCaption.setText("");
+        String[] words = caption.split("\\s+");
+        for (int i = 0; i < words.length; i++) {
+            if(words[i].charAt(0) == '@' || words[i].charAt(0) == '#') {
+                Spannable word = new SpannableString(words[i]);
+                word.setSpan(new ForegroundColorSpan(0xFF38688F), 0, word.length(), Spannable.SPAN_INCLUSIVE_EXCLUSIVE);
+                coloredCaption.append(word);
+                coloredCaption.append(" ");
+            }
+            else {
+                coloredCaption.append(words[i] + " ");
+            }
+        }
+        return coloredCaption;
     }
 
     private String getTimerValue(long createdTime) {
