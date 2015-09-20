@@ -60,7 +60,7 @@ public class PhotosAdapter extends ArrayAdapter<Photo> {
         }
 
         viewHolder.image.setImageResource(0);
-        Picasso.with(getContext()).load(photo.getImageUrl()).resize(getContext().getResources().getDisplayMetrics().widthPixels, 0).into(viewHolder.image);
+        Picasso.with(getContext()).load(photo.getImageUrl()).placeholder(getContext().getResources().getDrawable(R.drawable.default_image)).resize(getContext().getResources().getDisplayMetrics().widthPixels, 0).into(viewHolder.image);
 
         viewHolder.profilePic.setImageResource(0);
         Picasso.with(getContext()).load(photo.getUserProfilePicUrl()).into(viewHolder.profilePic);
