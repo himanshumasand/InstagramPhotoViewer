@@ -102,8 +102,10 @@ public class PhotoStreamActivity extends ActionBarActivity {
             int imageHeight = object.getJSONObject("images").getJSONObject("standard_resolution").getInt("height");
             long createdTime = object.getLong("created_time");
             int likesCount = object.getJSONObject("likes").getInt("count");
+            String commentUsername = object.getJSONObject("comments").getJSONArray("data").getJSONObject(0).getJSONObject("from").getString("username");
+            String comment = object.getJSONObject("comments").getJSONArray("data").getJSONObject(0).getString("text");
 
-            Photo photo = new Photo(username, userProfilePicUrl, caption, imageUrl, imageWidth, imageHeight, createdTime, likesCount);
+            Photo photo = new Photo(username, userProfilePicUrl, caption, imageUrl, imageWidth, imageHeight, createdTime, likesCount, commentUsername, comment);
             photos.add(photo);
 
         } catch (JSONException e) {

@@ -29,7 +29,8 @@ public class PhotosAdapter extends ArrayAdapter<Photo> {
         TextView likes;
         TextView usernameBottom;
         TextView caption;
-
+        TextView commentUsername;
+        TextView comment;
     }
 
     public PhotosAdapter(Context context, List<Photo> objects) {
@@ -52,6 +53,8 @@ public class PhotosAdapter extends ArrayAdapter<Photo> {
             viewHolder.likes = (TextView) convertView.findViewById(R.id.tvLikesCount);
             viewHolder.usernameBottom = (TextView) convertView.findViewById(R.id.tvUserNameCaption);
             viewHolder.caption = (TextView) convertView.findViewById(R.id.tvCaption);
+            viewHolder.commentUsername = (TextView) convertView.findViewById(R.id.tvCommentUsername);
+            viewHolder.comment = (TextView) convertView.findViewById(R.id.tvComment);
 
             convertView.setTag(viewHolder);
         }
@@ -74,6 +77,9 @@ public class PhotosAdapter extends ArrayAdapter<Photo> {
         viewHolder.likes.setText(formatter.format(photo.getLikesCount()) + " likes");
 
         viewHolder.time.setText(getTimerValue(photo.getCreatedTime()));
+
+        viewHolder.commentUsername.setText(photo.getCommentUsername());
+        viewHolder.comment.setText(photo.getComment());
 
 
         return convertView;

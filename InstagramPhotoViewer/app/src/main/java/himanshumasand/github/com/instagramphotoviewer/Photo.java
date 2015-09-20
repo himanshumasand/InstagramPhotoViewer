@@ -13,8 +13,10 @@ public class Photo {
     private int imageHeight;
     private long createdTime;
     private int likesCount;
+    private String commentUsername;
+    private String comment;
 
-    public Photo(String username, String userProfilePic, String caption, String imageUrl, int imageWidth, int imageHeight, long createdTime, int likesCount) {
+    public Photo(String username, String userProfilePic, String caption, String imageUrl, int imageWidth, int imageHeight, long createdTime, int likesCount, String commentUsername, String comment) {
         this.username = username;
         this.userProfilePicUrl = userProfilePic;
         this.caption = caption;
@@ -23,6 +25,8 @@ public class Photo {
         this.imageHeight = imageHeight;
         this.createdTime = createdTime;
         this.likesCount = likesCount;
+        this.commentUsername = commentUsername;
+        this.comment = comment;
     }
 
     public String getUsername() {
@@ -56,4 +60,13 @@ public class Photo {
     public long getCreatedTime() {
         return createdTime;
     }
+
+    public String getCommentUsername() {
+        return commentUsername;
+    }
+
+    public String getComment() {
+        return comment;
+    }
+
 }

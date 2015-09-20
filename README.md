@@ -16,7 +16,7 @@ The following **required** functionality is completed:
 The following **optional** features are implemented:
 
 * [x] User can **pull-to-refresh** popular stream to get the latest popular photos
-* [ ] Show latest comments for each photo
+* [x] Show latest comments for each photo
 * [x] Display each photo with the same style and proportions as the real Instagram - Still see white spaces. Not sure if that's because the image URL gives the white background in the images.
 * [x] Display each user profile image using a RoundedImageViewDisplay each user profile image using a [RoundedImageView](https://github.com/vinc3m1/RoundedImageView)
 * [x] Display a nice default placeholder graphic for each image during loading
@@ -36,9 +36,13 @@ The following **additional** features are implemented:
 
 Here's a walkthrough of implemented user stories:
 
-<img src='http://i.imgur.com/G6X5Wg3.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
+<img src='http://i.imgur.com/nDpIxQP.gif' title='Video Walkthrough' width='' alt='Video Walkthrough' />
 
 GIF created with [LiceCap](http://www.cockos.com/licecap/).
+
+Here is a screenshot
+
+<img src='http://i.imgur.com/DevzHkX.png' title='Screenshot' />
 
 ## Notes
 
